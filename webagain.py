@@ -17,8 +17,8 @@ st.markdown("""
         max-width: 45rem;
     }
     
-    /* Mengatur gaya kotak jalan pintas YouTube */
-    .yt-box {
+    /* Mengatur gaya kotak jalan pintas */
+    .shortcut-box {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -33,19 +33,19 @@ st.markdown("""
         transition: transform 0.2s, background-color 0.2s;
         box-shadow: 0px 2px 5px rgba(0,0,0,0.05);
     }
-    .yt-box:hover {
+    .shortcut-box:hover {
         transform: translateY(-5px);
         background-color: #e4e6eb;
-        color: #ff0000;
+        color: #0078ff;
     }
-    .yt-icon {
+    .icon {
         font-size: 40px;
         margin-bottom: 8px;
     }
     </style>
 """, unsafe_allow_html=True)
 
-# 3. Kolom Pencarian Google (Menggunakan Google Search Asli saat di-Enter)
+# 3. Kolom Pencarian Google
 query = st.text_input(
     label="Pencarian",
     placeholder="🔍 Cari lewat Google atau masukkan alamat...",
@@ -59,38 +59,41 @@ if query:
 st.write("") # Memberi jarak vertikal
 st.write("")
 
-# 4. Membuat Grid Kotak-Kotak Jalan Pintas untuk YouTube
-# Di sini kita membuat susunan 4 kolom kesamping
+# 4. Membuat Grid Kotak-Kotak Jalan Pintas Sesuai Permintaan
 kolom1, kolom2, kolom3, kolom4 = st.columns(4)
 
+# Kotak 1: YouTube
 with kolom1:
     st.markdown("""
-        <a href="https://youtube.com" target="_blank" class="yt-box">
-            <div class="yt-icon">▶️</div>
+        <a href="https://youtube.com" target="_blank" class="shortcut-box">
+            <div class="icon">▶️</div>
             <div>YouTube</div>
         </a>
     """, unsafe_allow_html=True)
 
+# Kotak 2: Discord
 with kolom2:
     st.markdown("""
-        <a href="https://youtube.com" target="_blank" class="yt-box">
-            <div class="yt-icon">▶️</div>
-            <div>YouTube</div>
+        <a href="https://discord.com" target="_blank" class="shortcut-box">
+            <div class="icon">💬</div>
+            <div>Discord</div>
         </a>
     """, unsafe_allow_html=True)
 
+# Kotak 3: WhatsApp
 with kolom3:
     st.markdown("""
-        <a href="https://youtube.com" target="_blank" class="yt-box">
-            <div class="yt-icon">▶️</div>
-            <div>YouTube</div>
+        <a href="https://whatsapp.com" target="_blank" class="shortcut-box">
+            <div class="icon">🟢</div>
+            <div>WhatsApp</div>
         </a>
     """, unsafe_allow_html=True)
 
+# Kotak 4: TLauncher
 with kolom4:
     st.markdown("""
-        <a href="https://youtube.com" target="_blank" class="yt-box">
-            <div class="yt-icon">▶️</div>
-            <div>YouTube</div>
+        <a href="https://tlauncher.org" target="_blank" class="shortcut-box">
+            <div class="icon">🎮</div>
+            <div>TLauncher</div>
         </a>
     """, unsafe_allow_html=True)
